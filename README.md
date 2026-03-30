@@ -1,6 +1,11 @@
 # Mosoro Python SDK
 
-Official Python client library for the [Mosoro](https://github.com/mosoro/mosoro-core) robot fleet management platform.
+[![CI](https://github.com/mosoroio/mosoro-py/actions/workflows/ci.yml/badge.svg)](https://github.com/mosoroio/mosoro-py/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/mosoro-py)](https://pypi.org/project/mosoro-py/)
+[![Python](https://img.shields.io/pypi/pyversions/mosoro-py)](https://pypi.org/project/mosoro-py/)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+Official Python client library for the [Mosoro](https://github.com/mosoroio/mosoro-core) robot fleet management platform.
 
 ## Installation
 
