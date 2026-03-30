@@ -19,7 +19,7 @@ try:
 except ImportError:
     # Standalone minimal definitions for SDK-only usage
     from pydantic import BaseModel, Field
-    from typing import Any, Dict, List, Literal, Optional
+    from typing import Any, Dict, List, Optional
     from datetime import datetime
 
     class Position(BaseModel):
@@ -60,7 +60,12 @@ except ImportError:
         type: str
         payload: MosoroPayload = Field(default_factory=MosoroPayload)
 
+
 __all__ = [
-    "MosoroMessage", "MosoroPayload", "Position",
-    "MessageHeader", "CurrentTask", "ErrorDetail",
+    "MosoroMessage",
+    "MosoroPayload",
+    "Position",
+    "MessageHeader",
+    "CurrentTask",
+    "ErrorDetail",
 ]

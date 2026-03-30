@@ -13,7 +13,7 @@ logger = logging.getLogger("mosoro.sdk.client")
 
 class MosoroClient:
     """Synchronous client for the Mosoro REST API.
-    
+
     Args:
         base_url: Base URL of the Mosoro API (e.g., "http://localhost:8000")
         token: Optional JWT token for authentication

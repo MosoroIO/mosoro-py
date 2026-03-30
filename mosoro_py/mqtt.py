@@ -14,7 +14,7 @@ logger = logging.getLogger("mosoro.sdk.mqtt")
 
 class MosoroMQTT:
     """MQTT client wrapper for subscribing to Mosoro fleet events.
-    
+
     Args:
         broker: MQTT broker hostname
         port: MQTT broker port
@@ -37,28 +37,32 @@ class MosoroMQTT:
             callback_api_version=mqtt.CallbackAPIVersion.VERSION2,
         )
         self._client.on_message = self._on_message
-        
+
         if tls_config:
             self._client.tls_set(**tls_config)
 
     def on_status(self, robot_id: str) -> Callable:
         """Decorator to register a handler for robot status updates."""
         topic = f"mosoro/v1/agents/{robot_id}/status"
+
         def decorator(func: Callable) -> Callable:
             if topic not in self._handlers:
                 self._handlers[topic] = []
             self._handlers[topic].append(func)
             return func
+
         return decorator
 
     def on_event(self, robot_id: str) -> Callable:
         """Decorator to register a handler for robot events."""
         topic = f"mosoro/v1/agents/{robot_id}/events"
+
         def decorator(func: Callable) -> Callable:
             if topic not in self._handlers:
                 self._handlers[topic] = []
             self._handlers[topic].append(func)
             return func
+
         return decorator
 
     def subscribe(self, topic: str, handler: Callable) -> None:

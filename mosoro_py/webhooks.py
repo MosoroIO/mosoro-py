@@ -18,13 +18,13 @@ def validate_signature(
     algorithm: str = "sha256",
 ) -> bool:
     """Validate a webhook payload signature.
-    
+
     Args:
         payload: Raw request body bytes
         signature: Signature from the X-Mosoro-Signature header
         secret: Webhook secret key
         algorithm: Hash algorithm (default: sha256)
-        
+
     Returns:
         True if signature is valid, False otherwise
     """
@@ -33,15 +33,15 @@ def validate_signature(
         payload,
         getattr(hashlib, algorithm),
     ).hexdigest()
-    
+
     return hmac.compare_digest(expected, signature)
 
 
 def parse_signature_header(header: str) -> Optional[str]:
     """Parse the X-Mosoro-Signature header value.
-    
+
     Expected format: "sha256=<hex_digest>"
-    
+
     Returns the hex digest portion, or None if invalid.
     """
     if not header or "=" not in header:

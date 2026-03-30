@@ -3,7 +3,6 @@
 
 """Tests for the Mosoro Python SDK client."""
 
-import pytest
 from mosoro_py.client import MosoroClient
 from mosoro_py.webhooks import validate_signature, parse_signature_header
 
@@ -28,7 +27,9 @@ class TestWebhookValidation:
     def test_valid_signature(self):
         payload = b'{"event": "status_update"}'
         secret = "test-secret"
-        import hashlib, hmac
+        import hashlib
+        import hmac
+
         sig = hmac.new(secret.encode(), payload, hashlib.sha256).hexdigest()
         assert validate_signature(payload, sig, secret) is True
 
