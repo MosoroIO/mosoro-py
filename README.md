@@ -5,7 +5,7 @@
 [![Python](https://img.shields.io/pypi/pyversions/mosoro-py)](https://pypi.org/project/mosoro-py/)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Official Python client library for the [Mosoro](https://github.com/mosoroio/mosoro-core) robot fleet management platform.
+Official Python client library for [Mosoro](https://github.com/mosoroio/mosoro-core) — the open-source communication bridge for multi-vendor robot fleets.
 
 ## Installation
 
